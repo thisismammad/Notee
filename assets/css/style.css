@@ -206,9 +206,6 @@
   .top-13 {
     top: calc(var(--spacing) * 13);
   }
-  .top-14 {
-    top: calc(var(--spacing) * 14);
-  }
   .bottom-0 {
     bottom: calc(var(--spacing) * 0);
   }
@@ -254,9 +251,6 @@
   .hidden\! {
     display: none !important;
   }
-  .table {
-    display: table;
-  }
   .field-sizing-content {
     field-sizing: content;
   }
@@ -271,9 +265,6 @@
   }
   .w-13 {
     width: calc(var(--spacing) * 13);
-  }
-  .w-52 {
-    width: calc(var(--spacing) * 52);
   }
   .w-52\! {
     width: calc(var(--spacing) * 52) !important;
@@ -302,14 +293,8 @@
   .flex-2 {
     flex: 2;
   }
-  .border-collapse {
-    border-collapse: collapse;
-  }
   .cursor-pointer {
     cursor: pointer;
-  }
-  .resize {
-    resize: both;
   }
   .resize-none {
     resize: none;
@@ -352,10 +337,6 @@
   }
   .rounded-md {
     border-radius: var(--radius-md);
-  }
-  .border {
-    border-style: var(--tw-border-style);
-    border-width: 1px;
   }
   .border-1 {
     border-style: var(--tw-border-style);
@@ -433,9 +414,6 @@
   .text-gray-50 {
     color: var(--color-gray-50);
   }
-  .underline {
-    text-decoration-line: underline;
-  }
   .shadow-\[0px_0px_3px_rgba\(0\,0\,0\,0\.2\)\] {
     --tw-shadow: 0px 0px 3px var(--tw-shadow-color, rgba(0,0,0,0.2));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
@@ -443,10 +421,6 @@
   .shadow-\[1px_0px_2px_rgba\(0\,0\,0\,0\.1\)\] {
     --tw-shadow: 1px 0px 2px var(--tw-shadow-color, rgba(0,0,0,0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
   }
   .transition-\[max-height\] {
     transition-property: max-height;
@@ -668,6 +642,14 @@
       color: var(--color-gray-50);
     }
   }
+  .note-restore-btn {
+    position: absolute;
+    right: calc(var(--spacing) * 8);
+    color: var(--color-gray-950);
+    &:where(.dark, .dark *) {
+      color: var(--color-gray-50);
+    }
+  }
 }
 @property --tw-border-style {
   syntax: "*";
@@ -743,11 +725,6 @@
   inherits: false;
   initial-value: 0 0 #0000;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @property --tw-duration {
   syntax: "*";
   inherits: false;
@@ -771,7 +748,6 @@
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
-      --tw-outline-style: solid;
       --tw-duration: initial;
     }
   }
