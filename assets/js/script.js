@@ -218,12 +218,18 @@ function deleteNote() {
       const noteId = Number(item.id.split("-")[3]);
       let noteList = [];
       noteList = JSON.parse(localStorage.getItem("noteList")) || [];
-      const updatedList = noteList.map((item) => {
-        if (noteId === item.id) {
-          return { ...item, ...newDeletedState };
-        }
-        return item;
-      });
+      let updatedList;
+      const found = noteList.find((item) => item.id === noteId);
+      if (found && found.isDeleted) {
+        updatedList = noteList.filter((item) => item.id !== noteId);
+      } else {
+        updatedList = noteList.map((item) => {
+          if (noteId === item.id) {
+            return { ...item, ...newDeletedState };
+          }
+          return item;
+        });
+      }
       localStorage.setItem("noteList", JSON.stringify(updatedList));
       loadNotes(updatedList);
     });
